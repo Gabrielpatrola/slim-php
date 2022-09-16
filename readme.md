@@ -7,7 +7,7 @@
 
 <p align="center">
  <img alt="Language used" src="https://img.shields.io/badge/Language%20-%20^8.0-green?style=flat&logo=PHP">
- <img alt="Made with laravel" src="https://img.shields.io/badge/Made%20with%20-%Slim-orange?style=flat&logo=Slim">
+ <img alt="Made with Slim" src="https://img.shields.io/badge/Made%20with%20-Slim-orange?style=flat&logo=PHP">
 <p>
 
 <h3 align="center">
