@@ -1,0 +1,19 @@
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+        beStrictAboutChangesToGlobalState="true"
+        beStrictAboutOutputDuringTests="true"
+        colors="true"
+        bootstrap="vendor/autoload.php"
+>
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="ENV" value="test"/>
+        <env name="ADMIN_USERNAME" value="root"/>
+        <env name="ADMIN_PASSWORD" value="secret"/>
+    </php>
+</phpunit>

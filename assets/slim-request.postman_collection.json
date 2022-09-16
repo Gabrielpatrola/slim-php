@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "4a96be2b-70be-4645-b67e-6aa356e85892",
+		"name": "slim request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "History",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{apiUrl}}/history",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stock get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{apiUrl}}/stock?q=googl.us",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"stock"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "googl.us"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test User\",\n    \"email\":\"test@test.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiUrl}}/users",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"if (jsonData && jsonData.token ) {",
+							"    pm.collectionVariables.set(\"token\", jsonData.token);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test@test.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiUrl}}/login",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "apikey",
+			"type": "default"
+		}
+	]
+}
