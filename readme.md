@@ -1,4 +1,4 @@
-## PHP Challenge
+## PHP Slim 4 Framework
 
 <h1 align="center">
     <br/>
@@ -22,7 +22,7 @@
 
 ## 💭 About
 
-This is the main repo for the `PHP Challenge` project.
+This is a repository to test a small application using the Slim 4, rabbitMQ, MySQL, Docker and Nginx 
 
 ## 👨‍💻 Stack used
 
