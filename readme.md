@@ -47,9 +47,9 @@ First the repository in your computer
 
 ```sh
   # Clone the repository
-  $ git clone git@git.jobsity.com:gabrielpatrola/php-challenge.git
+  $ git clone git@github.com:Gabrielpatrola/slim-php.git
   # Go to the project folder
-  $ cd php-challenge
+  $ cd slim-php
 ```
 
 2. Create a .env file
